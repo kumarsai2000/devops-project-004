@@ -11,5 +11,5 @@ default = "mainkeypair"
 }
 
 variable "name" {
-default = ""
+default = "my-instance"
 }
