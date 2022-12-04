@@ -1,0 +1,22 @@
+---
+- hosts: aws_ec2
+  become: yes
+  remote_user: root
+  gather_facts: true
+
+  vars:
+    ansible_ssh_private_key_file: "/etc/ansible/mainkeypair.pem"
+    ansible_ssh_user: "root"
+
+  tasks:
+    - name: install httpd
+      action: yum name=httpd state=present
+
+    - name: restart httpd
+      service: name=httpd state=present
+
+    - name: get code from git
+      git:
+        repo: https://github.com/devops0014/devops-project-004.git
+        dest: /var/www/html/index.html
+        verson: front
