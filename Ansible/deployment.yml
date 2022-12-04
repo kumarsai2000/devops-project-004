@@ -19,4 +19,4 @@
       git:
         repo: https://github.com/devops0014/devops-project-004.git
         dest: /var/www/html/index.html
-        verson: front
+        version: front
