@@ -14,6 +14,9 @@
 
     - name: restart httpd
       service: name=httpd state=restarted
+      
+    - name: install git
+      command: yum install git -y
 
     - name: get code from git
       git:
