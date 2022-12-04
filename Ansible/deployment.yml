@@ -13,7 +13,7 @@
       action: yum name=httpd state=present
 
     - name: restart httpd
-      service: name=httpd state=present
+      service: name=httpd state=restarted
 
     - name: get code from git
       git:
