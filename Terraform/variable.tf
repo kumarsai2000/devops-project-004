@@ -7,7 +7,7 @@ default = "t2.micro"
 }
 
 variable "key_name" {
-default = "mainkeypair"
+default = "project"
 }
 
 variable "name" {
