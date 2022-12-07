@@ -11,9 +11,6 @@
   tasks:
     - name: install httpd
       action: yum name=httpd state=present
-
-    - name: restart httpd
-      service: name=httpd state=restarted
       
     - name: install git
       command: yum install git -y
@@ -21,5 +18,8 @@
     - name: get code from git
       git:
         repo: https://github.com/devops0014/devops-project-004.git
-        dest: /var/www/html/
+        dest: /var/www/html/index.html
         version: front
+     
+    - name: restart httpd
+      service: name=httpd state=restarted
